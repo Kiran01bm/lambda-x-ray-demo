@@ -5,10 +5,11 @@ plugins:
 
 custom:
   bucketName: lambda-x-ray-demo-${self:provider.stage}-#{AWS::Region}-#{AWS::AccountId}
+  nodejsversion: nodejs12.x
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: ${self:custom.nodejsversion}
   stage: dev
   region: us-east-1
   tracing:
